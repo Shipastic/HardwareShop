@@ -258,55 +258,7 @@ namespace WebSite2.Data
                             CatalogGroup    = Categories["Материнские платы"],
                             Product         = Tovars["Материнская плата ASUS"],
                             DisplayInFilter = true,
-                        }
-                        //new FilterName
-                        //{
-                        //    ValueFilter     = "Price",
-                        //    FilterGroup     = Groups["Диапазон цен"],
-                        //    CatalogGroup    = Categories["Жесткие диски"],
-                        //    Product         = Tovars["Жесткий диск SeaGate"],
-                        //    DisplayInFilter = true,
-                        //},
-                        //new FilterName
-                        //{
-                        //    ValueFilter     ="Model",
-                        //    FilterGroup     = Groups["Выбор поставщиков"],
-                        //    CatalogGroup    = Categories["Жесткие диски"],
-                        //    Product         = Tovars["Жесткий диск SeaGate"],
-                        //    DisplayInFilter = true,
-                        //},
-                        //new FilterName
-                        //{
-                        //    ValueFilter     = "Brand",
-                        //    FilterGroup     = Groups["Выбор производителей"],
-                        //    CatalogGroup    = Categories["Жесткие диски"],
-                        //    Product         = Tovars["Жесткий диск SeaGate"],
-                        //    DisplayInFilter = true,
-                        //},
-                        // new FilterName
-                        //{
-                        //    ValueFilter     = "Price",
-                        //    FilterGroup     = Groups["Диапазон цен"],
-                        //    CatalogGroup    = Categories["Процессоры"],
-                        //    Product         = Tovars["процессор INTEL"],
-                        //    DisplayInFilter = true,
-                        //},
-                        //new FilterName
-                        //{
-                        //    ValueFilter     ="Model",
-                        //    FilterGroup     = Groups["Выбор поставщиков"],
-                        //    CatalogGroup    = Categories["Процессоры"],
-                        //    Product         = Tovars["процессор INTEL"],
-                        //    DisplayInFilter = true,
-                        //},
-                        //new FilterName
-                        //{
-                        //    ValueFilter     = "Brand",
-                        //    FilterGroup     = Groups["Выбор производителей"],
-                        //    CatalogGroup    = Categories["Процессоры"],
-                        //    Product         = Tovars["процессор INTEL"],
-                        //    DisplayInFilter = true,
-                        //},
+                        }                      
                     };
 
                     Filter = new Dictionary<string, FilterName>();
