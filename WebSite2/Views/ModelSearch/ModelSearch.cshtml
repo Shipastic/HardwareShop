@@ -1,0 +1,13 @@
+﻿@model List<FilterName>
+
+<div id="searchresults">
+    <h3> 
+    Все модели товара: @Model.First().ValueFilter   
+    </h3>
+<ul>
+    @foreach (var item in Model)
+    {
+        <li>@item.ValueFilter</li>
+    }
+</ul>
+</div>

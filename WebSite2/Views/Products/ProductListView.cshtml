@@ -1,0 +1,69 @@
+﻿@model WebSite2.ViewModels.ProductsListViewModel
+@{
+    ViewBag.Title = "Каталог товаров";
+}
+
+<h2>Каталог товаров</h2>
+<form method="get" id="foo">
+    <div class="form-inline form-group">
+        <label class="control-label">Название:</label>
+        <input name="nameProductSearch" class="form-control">
+        @*<select name="nameProductSearch" asp-items="Model.ProductsAll" class="form-control"></select>*@
+
+
+        <label class="control-label">Категория: </label>
+        @*@Html.DropDownList("groups", Model.CatalogGroups as SelectList, htmlAttributes: new { @class = "form-control" })*@
+        <select name="groups" asp-items="Model.CatalogGroups" class="form-control"></select>
+
+        <input type="submit" value="Фильтр" class="btn btn-default" onclick="ajaxHelper.postForm('#foo' ,'#table' )">
+        @*<button type="button" onclick="ajaxHelper.postForm('#foo' ,'#table )">Фильтр</button>*@
+    </div>
+</form>
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>
+                Название товара
+            </th>
+            <th>
+                Категория товара
+            </th>
+            <th>
+                Описание товара
+            </th>
+            <th>
+                Фото товара
+            </th>
+            <th>
+                Подробнее
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (WebSite2.Data.Models.Product item in Model.GetProducts)
+        {
+            <tr class="success">
+                <td class="warning">@item.ProductName</td>
+                <td class="success">@item.CatalogGroup.GroupName</td>
+                <td class="danger">@item.LongDescription</td>
+                <td><img class="img-thumbnail" src="@item.ImagePath" alt="@item.ProductName" /></td>
+                <td>@Html.ActionLink("Подробнее", "Detail", "ProductDetails", new { nameprod = item.ProductName }) </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<script>
+    var ajaxHelper = {
+        postForm: function (form, updateElement) {
+            var jsData = $(form).serialize();
+            $.ajax({ type: "POST", url: 'Products/ProductListView?nameProductSearch=' + jsData.nameProductSearch + '&groups=' + jsData.groups + '' }).done(function (data) {
+                $(updateElement).html(data);
+            });
+        }
+    }
+</script>
+@section Footer{
+    <footer class="container">
+        <p class="float-right">SITE template built for <a href="#">Bootstrap</a> by <a href="iris-retail.ru">IRIS</a>.</p>
+    </footer>
+}

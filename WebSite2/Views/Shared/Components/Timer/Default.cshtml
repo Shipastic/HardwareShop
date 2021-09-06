@@ -1,0 +1,11 @@
+﻿@model TimerViewModel
+
+<p>Перечень фильтров</p>
+@{ 
+    //if (Model.Filters == null)
+    //    return;
+    foreach (var item in Model.Filters)
+    {
+        <div>@item.ValueFilter</div>
+    }
+}

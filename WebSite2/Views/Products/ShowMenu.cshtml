@@ -1,0 +1,33 @@
+﻿@model WebSite2.ViewModels.ProductsListViewModel
+<div class="col-lg-3 col-md-4 col-sm-5">
+    <div class="accordion">
+        @{
+            foreach (WebSite2.Data.Models.MainCategory mainCategory in Model.MainCategories)
+            {
+                <div class="panel closed">
+                    <div class="panel-header">
+                        <i class="fa fa-bar-chart"></i>
+                        @mainCategory.NameCategory
+                        <i class="fa fa-angle-right arrow"></i>
+                        <span class="spacer"></span>
+                    </div>
+                    <div class="panel-content">
+                        @{ if (mainCategory.CatalogGroups == null)
+                                continue;
+                            else
+                            {
+                                foreach (WebSite2.Data.Models.CatalogGroup category in mainCategory.CatalogGroups)
+                                    @Html.Partial("AllCategory", category)
+                                }
+                        }
+                    </div>
+                </div>
+            }
+        }
+    </div>
+</div>
+@section Footer{
+    <footer class="container">
+        <p class="float-right">SITE template built for <a href="#">Bootstrap</a> by <a href="iris-retail.ru">IRIS</a>.</p>
+    </footer>
+}

@@ -1,0 +1,11 @@
+﻿@*Подключаем нужный класс*@
+@model WebSite2.Data.Models.Product
+
+@*<div class="col-sm-4">*@
+
+
+<img class="img-thumbnail" src="@Model.ImagePath" alt="@Model.ProductName" />
+<p>Название: <h3>@Model.ProductName</h3></p>
+<p>     Цена: @Model.Price.ToString("c")</p>
+<p> Описание: <br>@Model.Description</p>
+<p><a class="btn btn-warning" asp-controller="ShopProduct" asp-action="addToProd" asp-route-id="@Model.ProductId">Добавить в корзину</a></p>

@@ -1,0 +1,136 @@
+﻿@model WebSite2.ViewModels.SmartFilterViewModel
+
+
+<h3> Смарт - фильтр реализация </h3>
+
+<div>
+
+    <h4>Товары</h4>
+    <hr />
+    <dl class="row">
+        @{ 
+        }
+        <dt class="col-sm-2">
+            @{ 
+                foreach (var item in Model.GetFilters)
+                {
+                   @Html.Partial("AllFilterName", item);
+                }
+            }
+           
+        </dt>
+        <dd class="col-sm-10">
+          
+        </dd>
+        <dt class="col-sm-2">
+           
+        </dt>
+        <dd class="col-sm-10">
+           
+        </dd>
+        @*<dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Price)
+            </dd>*@
+    </dl>
+</div>
+@*<div class="col-lg-3 col-md-4 col-sm-5" id="sidebar-wrapper">
+    @{
+            foreach (WebSite2.Data.Models.FilterName filterName in Model.GetFilters)
+            {
+                @Html.Partial("AllFilterName", filterName);
+            }
+        }*@
+<!--<div class="fa-header">
+    Бренд
+</div>
+<ul class=" checkbox-group">
+    <li>
+        <label>
+            <input id="chkBx_1" type="checkbox" value="Get Info" onchange="checkStatus()" />
+            <a href="#">ASUS</a>
+        </label>
+        &nbsp;
+        <span class="count"></span>
+    </li>
+    <li>
+        <label>
+            <input id="chkBx_2" type="checkbox" value="Get Info" onchange="checkStatus()" />
+            <a href="#">GigaByte</a>
+        </label>
+        &nbsp;
+        <span class="count"></span>
+    </li>
+    <li>
+        <label>
+            <input id="chkBx_3" type="checkbox" value="Get Info" onchange="checkStatus()" />
+            <a href="#">AsRock</a>
+        </label>
+        &nbsp;
+        <span class="count"></span>
+    </li>
+    <li>
+        <label>
+            <input id="chkBx_4" type="checkbox" value="Get Info" onchange="checkStatus()" />
+            <a href="#">MSI</a>
+        </label>
+        &nbsp;
+        <span class="count"></span>
+    </li>
+    <li>
+        <label>
+            <input id="chkBx_5" type="checkbox" value="Get Info" onchange="checkStatus()" />
+            <a href="#">INTEL</a>
+        </label>
+        &nbsp;
+        <span class="count"></span>
+    </li>
+</ul>
+<script>
+    function checkStatus() {
+        var chbox;
+        let regex = /^chkBx_.$/;
+        chbox = document.getElementById(regex);
+
+        if (chbox.checked && chbox == 'chkBx_2') {
+            alert('Выбран 1 чекбокс');
+        }
+        else {
+            alert('Не выбран');
+        }
+    }
+</script>
+
+<button id="sendRequest">Show</button>
+<div id="p3338"><b> Model: </b></div><br />
+<div id="p25075"><b>Brand: </b></div><br />
+<div id="p9999995"><b>About: </b></div><br />-->
+@*<script>
+                $(function () {
+                    $("sendRequest").click(function () {
+                        $.ajax({
+                            url: "GoodsProperties.xml",
+                            type: "GET",
+                            dataType: "xml",
+
+                            success: function (xml) {
+                                $("#p3338").append($(xml).find("p3338").text());
+                                $("#p25075").append($(xml).find("p25075").text());
+                                $("#p9999995").append($(xml).find("p9999995").text());
+                            },
+
+                            error: function (xhr, status, error) {
+                                alert("ERROR: " + error);
+                            }
+                        });
+                    });
+                });
+    </script>*@
+@*</div>*@
+@section Footer{
+    <footer class="container">
+        <p class="float-right">SITE template built for <a href="#">Bootstrap</a> by <a href="iris-retail.ru">IRIS</a>.</p>
+    </footer>
+}

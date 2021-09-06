@@ -1,0 +1,25 @@
+﻿@model WebSite2.ViewModels.ProductDetailViewModel
+
+@{
+    ViewBag.Title = "Детальная информация о товаре";
+}
+@{
+
+    <img class="img-thumbnail" src="@Model.GetProduct.ImagePath" alt="@Model.GetProduct.ImagePath" />
+    <p>Название: <h4>@Model.GetProduct.ProductName</h4></p>
+    <p>     Цена: @Model.GetProduct.Price.ToString("c")</p>
+    <p> Описание: <br>@Model.GetProduct.Description</p>
+    <p>
+        Свойства: <br>@{
+            foreach (var item in Model.GetFilterNames)
+            {
+                @Html.Partial("AllFilterName", item)
+            }
+        }
+    </p>
+}
+@section Footer{
+    <footer class="container">
+        <p class="float-right">SITE template built for <a href="#">Bootstrap</a> by <a href="iris-retail.ru">IRIS</a>.</p>
+    </footer>
+}

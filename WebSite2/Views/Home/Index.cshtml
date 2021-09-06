@@ -1,0 +1,18 @@
+﻿@model HomeViewModel
+
+<h1>Популярные продукты</h1>
+<div class="col-lg-3 col-md-4 col-sm-5">
+        @{
+            foreach (WebSite2.Data.Models.Product prod in Model.prodName)
+            {
+                @Html.Partial("AllProducts", prod)
+
+            }
+        }
+    </div>
+
+@section Footer{
+    <footer class="container">
+        <p class="float-right">SITE template built for <a href="#">Bootstrap</a> by <a href="iris-retail.ru">IRIS</a>.</p>
+    </footer>
+}
