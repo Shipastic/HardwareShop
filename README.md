@@ -43,7 +43,7 @@
         }
 ```
 - Затем выводятся пользователю:
-```c#
+```html
   ﻿@model WebSite2.ViewModels.ProductsListViewModel
 <div class="col-lg-3 col-md-4 col-sm-5">
     <div class="accordion">
